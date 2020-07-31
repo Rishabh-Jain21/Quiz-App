@@ -80,9 +80,22 @@ choices.forEach((choice) => {
         if (classToApply === 'correct') {
             incrementScore(CORRECT_BONUS);
         }
+        for (var i = 0; i < choices.length; i++) {
+            if (choices[i].dataset['number'] == currentQuestion.answer) {
+                c_answer = choices[i]
+                choices[i].parentElement.classList.add('correct')
+            }
+            else {
+
+            }
+            setTimeout(() => {
+                choices[i].parentElement.classList.remove('correct');
+            }, 500);
+        }
         selectedChoice.parentElement.classList.add(classToApply);
         setTimeout(() => {
             selectedChoice.parentElement.classList.remove(classToApply);
+            c_answer.parentElement.classList.remove('correct');
             getNewQuestion();
         }, 1000);
     });
