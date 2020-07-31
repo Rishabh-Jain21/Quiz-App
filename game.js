@@ -85,9 +85,6 @@ choices.forEach((choice) => {
                 c_answer = choices[i]
                 choices[i].parentElement.classList.add('correct')
             }
-            else {
-
-            }
             setTimeout(() => {
                 choices[i].parentElement.classList.remove('correct');
             }, 500);
